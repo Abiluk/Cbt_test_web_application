@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBT Examination Portal</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">EXAM PORTAL</div>
+        <div id="timer">Time Left: 00:00</div>
+    </header>
+
+    <main class="container">
+        <aside class="sidebar">
+            <h3>Subjects</h3>
+            <div class="subject-nav">
+                <button onclick="switchSubject('english')">English</button>
+                <button onclick="switchSubject('biology')">Biology</button>
+                <button onclick="switchSubject('chemistry')">Chemistry</button>
+                <button onclick="switchSubject('physics')">Physics</button>
+            </div>
+            <hr>
+            <h3>Questions</h3>
+            <div id="question-grid" class="grid"></div>
+        </aside>
+
+        <section class="exam-area">
+            <h2 id="current-subject-title">English</h2>
+            <div id="question-container">
+                <p id="question-text">Loading question...</p>
+                <div id="options-container"></div>
+            </div>
+            <div class="controls">
+                <button id="prev-btn" onclick="prevQuestion()">Previous</button>
+                <button id="next-btn" onclick="nextQuestion()">Next</button>
+                <button id="submit-btn" class="submit" onclick="showResults()">Submit Exam</button>
+            </div>
+            
+        </section>
+    </main>
+
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <h2>Exam Completed!</h2>
+            <div id="score-summary"></div>
+            <button onclick="location.reload()">Restart</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
